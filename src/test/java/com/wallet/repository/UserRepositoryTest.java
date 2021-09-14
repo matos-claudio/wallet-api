@@ -20,16 +20,16 @@ import com.wallet.entity.User;
 @SpringBootTest
 public class UserRepositoryTest {
 	
-	private static final String EMAIL = "set@gmail.com";
-	
+	private static final String EMAIL = "email@teste.com";
+
 	@Autowired
 	UserRepository userRepository;
 	
 	@Before
 	public void setUp() {
 		User user = new User();
-		user.setName("SetupUser");
-		user.setPassword("1234");
+		user.setName("SetUpUser");
+		user.setPassword("Senha123");
 		user.setEmail(EMAIL);
 		userRepository.save(user);
 	}
@@ -40,16 +40,16 @@ public class UserRepositoryTest {
 	}
 	
 	@Test
-	public void testSave() {
+	public void testeSave() {
 		User user = new User();
 		user.setName("Teste");
 		user.setPassword("123456");
-		user.setEmail("teste@teste.com");
+		user.setEmail(EMAIL);
 		User response = userRepository.save(user);
-		
 		assertNotNull(response);
 	}
 	
+	@Test
 	public void testFindByEmail() {
 		Optional<User> response = userRepository.findByEmailEquals(EMAIL);
 		assertTrue(response.isPresent());
