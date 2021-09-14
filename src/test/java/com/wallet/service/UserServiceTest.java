@@ -20,7 +20,7 @@ import com.wallet.repository.UserRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@ActiveProfiles("test")
+//@ActiveProfiles("test")
 public class UserServiceTest {
 	
 	@MockBean
